@@ -10,7 +10,7 @@
 	let scramble = $state(scrambler.getRandomScramble().scrambleString);
 
 	function handleKeydown(event) {
-		if (event.key === ' ' || event.keyCode === 32) {
+		if (event.key == ' ' || event.key == 'Enter') {
 			event.preventDefault();
 
 			{
