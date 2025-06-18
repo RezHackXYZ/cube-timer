@@ -49,7 +49,7 @@
 		{scramble}
 	</span>
 
-	<span class="font-mono text-5xl">
+	<span class="font-mono text-7xl">
 		{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}.{milliseconds
 			.toString()
 			.padStart(2, '0')}
