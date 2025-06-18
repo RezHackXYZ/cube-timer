@@ -8,23 +8,12 @@
 	let updateTime = $state();
 
 	let scramble = $state(scrambler.getRandomScramble().scrambleString);
-</script>
 
-<div class="flex h-full flex-col items-center justify-center gap-4">
-	<span class="font-mono text-5xl">
-		{scramble}
-	</span>
+	function handleKeydown(event) {
+		if (event.key === ' ' || event.keyCode === 32) {
+			event.preventDefault();
 
-	<span class="font-mono text-5xl">
-		{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}.{milliseconds
-			.toString()
-			.padStart(2, '0')}
-	</span>
-
-	<div>
-		<button
-			class="btn {updateTime ? 'red' : 'green'}"
-			onclick={() => {
+			{
 				if (updateTime) {
 					clearInterval(updateTime);
 					updateTime = null;
@@ -48,9 +37,21 @@
 						}
 					}, 10);
 				}
-			}}
-		>
-			{updateTime ? 'stop' : 'start'}
-		</button>
-	</div>
+			}
+		}
+	}
+</script>
+
+<svelte:window on:keydown={handleKeydown} />
+
+<div class="flex h-full flex-col items-center justify-center gap-4">
+	<span class="font-mono text-2xl">
+		{scramble}
+	</span>
+
+	<span class="font-mono text-5xl">
+		{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}.{milliseconds
+			.toString()
+			.padStart(2, '0')}
+	</span>
 </div>
