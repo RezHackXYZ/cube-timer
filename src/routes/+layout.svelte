@@ -4,4 +4,4 @@
 	let { children } = $props();
 </script>
 
-{@render children()}
+<div class="h-full">{@render children()}</div>
