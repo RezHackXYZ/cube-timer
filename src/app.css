@@ -1,1 +1,13 @@
 @import 'tailwindcss';
+
+@utility btn {
+	@apply rounded px-4 py-1 text-xl outline-2 transition hover:scale-110 bg-white cursor-pointer;
+
+	&.green {
+		@apply outline-green-500 bg-green-200;
+	}
+
+	&.red {
+		@apply outline-red-500 bg-red-200;
+	}
+}
