@@ -20,8 +20,10 @@
 
 		<div class="flex flex-col items-center gap-3">
 			<span class="text-3xl"
-				>so im fixing that by making a new cubetimer, which is open source and has all the features
-				and looks awesome!</span
+				>so im fixing that by making a new cubetimer, which is open source (<a
+					class="text-blue-700 underline"
+					href="https://github.com/RezHackXYZ/cube-timer/">repo</a
+				>) and has all the features and looks awesome!</span
 			>
 
 			<a href="./app"><button class="btn green">try now!</button></a>
