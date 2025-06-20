@@ -4,6 +4,7 @@
 	import ScrambleText from "$lib/widgets/scramble/scramble-text.svelte";
 	import ScrambleVisual from "$lib/widgets/scramble/scramble-visual.svelte";
 	import { update_with_new_scramble } from "$lib/widgets/scramble/new-scramble.svelte";
+	import List from "$lib/widgets/list/list.svelte";
 
 	update_with_new_scramble();
 </script>
@@ -18,15 +19,19 @@
 />
 
 <div class="flex h-full flex-col items-center justify-center">
-	<div class="flex justify-evenly">
-		<ScrambleText />
-		<ScrambleVisual />
-	</div>
-	<div class="flex flex-1 items-center justify-center">
+	<div class="flex flex-1 items-center justify-center p-3">
 		<span class="font-mono text-7xl">
 			{#if minutes.v != 0}{minutes.v.toString().padStart(2, "0")}:{/if}{seconds.v}.{milliseconds.v
 				.toString()
 				.padStart(2, "0")}
 		</span>
+	</div>
+	<div class="flex gap-4 p-3">
+		<div class="flex w-[270px] flex-col items-center gap-2 rounded border-2 border-black p-3">
+			<ScrambleText /><ScrambleVisual />
+		</div>
+		<List />
+		<div class="rounded border-2 border-black p-3"></div>
+		<div class="rounded border-2 border-black p-3"></div>
 	</div>
 </div>

@@ -6,8 +6,8 @@
 	let scramblevisual;
 
 	$effect(() => {
-		scramby(CubeType.v).drawScramble(scramblevisual, ScrambleState.v, 300, 180);
+		scramby(CubeType.v).drawScramble(scramblevisual, ScrambleState.v, 250, 180);
 	});
 </script>
 
-<div bind:this={scramblevisual}></div>
+<div class="rounded outline-2 outline-gray-200" bind:this={scramblevisual}></div>

@@ -1,13 +1,14 @@
-@import 'tailwindcss';
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+@import "tailwindcss";
 
 @utility btn {
-	@apply rounded px-4 py-1 text-xl outline-2 transition hover:scale-110 bg-white cursor-pointer;
+	@apply cursor-pointer rounded bg-white px-4 py-1 text-xl outline-2 transition hover:scale-110;
 
 	&.green {
-		@apply outline-green-500 bg-green-200;
+		@apply bg-green-200 outline-green-500;
 	}
 
 	&.red {
-		@apply outline-red-500 bg-red-200;
+		@apply bg-red-200 outline-red-500;
 	}
 }
