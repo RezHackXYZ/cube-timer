@@ -11,7 +11,7 @@
 				</li>
 
 				<li>
-					<a class="text-blue-700 underline" href="https://www.cubedesk.io/">cubedesk</a>: a lot of
+					<a class="text-blue-700 underline" href="https://www.cubedesk.io/">cubedesk</a>: looks good, but a lot of
 					features are locked behind a pro subscription, and the open source repo doesnt include
 					them
 				</li>
