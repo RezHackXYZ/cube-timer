@@ -1,10 +1,11 @@
 <script>
-	import { start_or_stop_time } from "../../lib/time_logic.svelte";
+	import { start_or_stop_time } from "$lib/time_logic.svelte";
 	import { minutes, seconds, milliseconds } from "$lib/store.svelte.js";
+	import { update_with_new_scramble } from "$lib/widgets/scramble/new-scramble.svelte";
 	import ScrambleText from "$lib/widgets/scramble/scramble-text.svelte";
 	import ScrambleVisual from "$lib/widgets/scramble/scramble-visual.svelte";
-	import { update_with_new_scramble } from "$lib/widgets/scramble/new-scramble.svelte";
 	import List from "$lib/widgets/list/list.svelte";
+	import Stats from "$lib/widgets/stats/stats.svelte";
 
 	update_with_new_scramble();
 </script>
@@ -31,7 +32,7 @@
 			<ScrambleText /><ScrambleVisual />
 		</div>
 		<List />
-		<div class="rounded border-2 border-black p-3"></div>
+		<Stats />
 		<div class="rounded border-2 border-black p-3"></div>
 	</div>
 </div>
