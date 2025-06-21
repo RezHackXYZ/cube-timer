@@ -18,7 +18,7 @@
 						backgroundColor: "rgba(0,0,0,0.1)",
 						pointRadius: 0,
 						borderWidth: 2,
-						tension: 0.4,
+						tension: 0.5,
 					},
 				],
 			},
