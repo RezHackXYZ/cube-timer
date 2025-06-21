@@ -56,8 +56,6 @@
 						border: { display: false },
 					},
 					y: {
-						grid: { display: false },
-						ticks: { display: false },
 						border: { display: false },
 					},
 				},
