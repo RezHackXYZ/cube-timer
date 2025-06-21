@@ -6,6 +6,7 @@
 	import ScrambleVisual from "$lib/widgets/scramble/scramble-visual.svelte";
 	import List from "$lib/widgets/list/list.svelte";
 	import Stats from "$lib/widgets/stats/stats.svelte";
+	import Graph from "$lib/widgets/graph/graph.svelte";
 
 	update_with_new_scramble();
 </script>
@@ -33,6 +34,6 @@
 		</div>
 		<List />
 		<Stats />
-		<div class="rounded border-2 border-black p-3"></div>
+		<Graph />
 	</div>
 </div>
