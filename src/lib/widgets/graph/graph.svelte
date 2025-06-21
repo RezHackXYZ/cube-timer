@@ -32,17 +32,17 @@
 						enabled: true,
 						mode: "index",
 						intersect: false,
-						displayColors: false, // ❌ no lil color square
+						displayColors: false,
 						backgroundColor: "rgba(0, 0, 0, 0.7)",
-						titleColor: "transparent", // 🧼 invisible title
-						titleFont: { size: 0 }, // also hide title spacing
+						titleColor: "transparent",
+						titleFont: { size: 0 },
 						callbacks: {
 							label: function (context) {
 								const solveNum = context.dataIndex + 1;
 								const time = context.parsed.y;
 								return [`Solve: ${solveNum}`, `Time: ${time}`];
 							},
-							title: () => "", // 🧼 no title at all
+							title: () => "",
 						},
 					},
 					legend: {
@@ -59,30 +59,7 @@
 						border: { display: false },
 					},
 				},
-			},
-			plugins: [
-				{
-					id: "hoverLine",
-					afterDraw(chart) {
-						if (chart.tooltip?._active?.length) {
-							const ctx = chart.ctx;
-							const active = chart.tooltip._active[0];
-							const x = active.element.x;
-							const topY = chart.scales.y.top;
-							const bottomY = chart.scales.y.bottom;
-
-							ctx.save();
-							ctx.beginPath();
-							ctx.moveTo(x, topY);
-							ctx.lineTo(x, bottomY);
-							ctx.lineWidth = 1;
-							ctx.strokeStyle = "rgba(0, 0, 0, 0.5)";
-							ctx.stroke();
-							ctx.restore();
-						}
-					},
-				},
-			],
+			}
 		});
 	});
 </script>
