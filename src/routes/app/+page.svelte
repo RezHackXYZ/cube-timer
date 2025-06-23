@@ -8,7 +8,18 @@
 	import Stats from "$lib/widgets/stats/stats.svelte";
 	import Graph from "$lib/widgets/graph/graph.svelte";
 
+	import { ListOfSolves } from "$lib/store.svelte.js";
+	import { onMount } from "svelte";
+
 	update_with_new_scramble();
+
+	onMount(() => {
+		ListOfSolves.set(JSON.parse(localStorage.getItem("solves")) || []);
+	});
+
+	$effect(() => {
+		localStorage.setItem("solves", JSON.stringify($ListOfSolves));
+	});
 </script>
 
 <svelte:window
