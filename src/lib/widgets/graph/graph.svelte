@@ -4,10 +4,12 @@
 	import { ListOfSolves } from "$lib/store.svelte.js";
 
 	let Canvas;
+	let chartInstance;
+
 	onMount(() => {
 		const ctx = Canvas.getContext("2d");
 
-		new Chart(ctx, {
+		chartInstance = new Chart(ctx, {
 			type: "line",
 			data: {
 				labels: ListOfSolves.v,
@@ -59,8 +61,20 @@
 						border: { display: false },
 					},
 				},
-			}
+			},
 		});
+	});
+
+	function reRenderChart(data) {
+		if (chartInstance) {
+			chartInstance.data.labels = data;
+			chartInstance.data.datasets[0].data = data;
+			chartInstance.update();
+		}
+	}
+
+	$effect(() => {
+		reRenderChart(ListOfSolves.v);
 	});
 </script>
 
