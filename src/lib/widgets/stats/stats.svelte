@@ -8,7 +8,7 @@
 	>
 		<span class="text-3xl leading-none text-gray-400">PB:</span>
 		<span class="text-5xl">
-			{ListOfSolves.v.length ? ListOfSolves.v.sort((a, b) => a - b)[0] : "--.--"}
+			{$ListOfSolves.length ? $ListOfSolves.sort((a, b) => a - b)[0] : "--.--"}
 		</span>
 	</div>
 	<div class="grid h-2/3 w-full grid-cols-2 gap-2">
@@ -16,8 +16,8 @@
 			<div class="flex flex-col">
 				<span class="text-gray-400">AoALL:</span>
 				<span class="text-4xl">
-					{ListOfSolves.v.length
-						? (ListOfSolves.v.reduce((a, b) => a + b, 0) / ListOfSolves.v.length).toFixed(2)
+					{$ListOfSolves.length
+						? ($ListOfSolves.reduce((a, b) => a + b, 0) / $ListOfSolves.length).toFixed(2)
 						: "--.--"}
 				</span>
 			</div>
@@ -26,8 +26,8 @@
 			<div class="flex flex-col">
 				<span class="text-gray-400">Ao5:</span>
 				<span class="text-4xl">
-					{ListOfSolves.v.length >= 5
-						? (ListOfSolves.v.slice(0, 5).reduce((a, b) => a + b, 0) / 5).toFixed(2)
+					{$ListOfSolves.length >= 5
+						? ($ListOfSolves.slice(0, 5).reduce((a, b) => a + b, 0) / 5).toFixed(2)
 						: "--.-- "}
 				</span>
 			</div>
@@ -36,8 +36,8 @@
 			<div class="flex flex-col">
 				<span class="text-gray-400">Ao12:</span>
 				<span class="text-4xl">
-					{ListOfSolves.v.length >= 12
-						? (ListOfSolves.v.slice(0, 12).reduce((a, b) => a + b, 0) / 12).toFixed(2)
+					{$ListOfSolves.length >= 12
+						? ($ListOfSolves.slice(0, 12).reduce((a, b) => a + b, 0) / 12).toFixed(2)
 						: "--.--"}
 				</span>
 			</div>
@@ -46,8 +46,8 @@
 			<div class="tex flex flex-col">
 				<span class="text-gray-400">Ao50:</span>
 				<span class="text-4xl">
-					{ListOfSolves.v.length >= 50
-						? (ListOfSolves.v.slice(0, 50).reduce((a, b) => a + b, 0) / 50).toFixed(2)
+					{$ListOfSolves.length >= 50
+						? ($ListOfSolves.slice(0, 50).reduce((a, b) => a + b, 0) / 50).toFixed(2)
 						: "--.--"}
 				</span>
 			</div>

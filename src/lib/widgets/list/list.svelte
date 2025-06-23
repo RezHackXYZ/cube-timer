@@ -6,7 +6,7 @@
 	<div
 		class="grid h-full max-h-[270px] w-full grid-cols-[min-content_min-content_auto] items-baseline gap-x-1 overflow-y-auto rounded px-4 outline-2 outline-gray-200"
 	>
-		{#each ListOfSolves.v as solve, index}
+		{#each $ListOfSolves as solve, index}
 			<span class="text-right font-mono text-xs text-gray-500">{index + 1}.</span>
 			<span>{solve}</span>
 			<button
@@ -14,7 +14,10 @@
 				aria-label="Delete solve"
 				on:click={() =>
 					confirm("Are you sure you want to delete this solve?")
-						? ListOfSolves.v.splice(index, 1)
+						? ListOfSolves.update((solves) => {
+								solves.splice(index, 1);
+								return solves;
+							})
 						: null}
 			>
 				<i class="nf nf-md-delete cursor-pointer transition hover:text-red-500"></i>

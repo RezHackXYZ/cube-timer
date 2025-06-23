@@ -12,10 +12,10 @@
 		chartInstance = new Chart(ctx, {
 			type: "line",
 			data: {
-				labels: ListOfSolves.v,
+				labels: $ListOfSolves,
 				datasets: [
 					{
-						data: $state.snapshot(ListOfSolves.v),
+						data: $state.snapshot($ListOfSolves),
 						borderColor: "black",
 						backgroundColor: "rgba(0,0,0,0.1)",
 						pointRadius: 0,
@@ -74,7 +74,7 @@
 	}
 
 	$effect(() => {
-		reRenderChart(ListOfSolves.v);
+		reRenderChart($ListOfSolves);
 	});
 </script>
 
