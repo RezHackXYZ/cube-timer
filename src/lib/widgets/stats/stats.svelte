@@ -8,7 +8,7 @@
 	>
 		<span class="text-3xl leading-none text-gray-400">PB:</span>
 		<span class="text-5xl">
-			{$ListOfSolves.length ? $ListOfSolves.sort((a, b) => a - b)[0] : "--.--"}
+			{$ListOfSolves.length ? [...$ListOfSolves].sort((a, b) => a - b)[0] : "--.--"}
 		</span>
 	</div>
 	<div class="grid h-2/3 w-full grid-cols-2 gap-2">

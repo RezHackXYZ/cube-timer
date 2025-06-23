@@ -15,7 +15,7 @@
 				labels: $ListOfSolves,
 				datasets: [
 					{
-						data: $state.snapshot($ListOfSolves),
+						data: $ListOfSolves,
 						borderColor: "black",
 						backgroundColor: "rgba(0,0,0,0.1)",
 						pointRadius: 0,
