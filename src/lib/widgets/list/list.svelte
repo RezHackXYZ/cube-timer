@@ -9,9 +9,16 @@
 		{#each ListOfSolves.v as solve, index}
 			<span class="text-right font-mono text-xs text-gray-500">{index + 1}.</span>
 			<span>{solve}</span>
-			<span class="flex justify-end text-gray-300">
-				<i class="nf nf-md-dots_vertical cursor-pointer transition hover:text-black"></i>
-			</span>
+			<button
+				class="flex justify-end text-gray-300"
+				aria-label="Delete solve"
+				on:click={() =>
+					confirm("Are you sure you want to delete this solve?")
+						? ListOfSolves.v.splice(index, 1)
+						: null}
+			>
+				<i class="nf nf-md-delete cursor-pointer transition hover:text-red-500"></i>
+			</button>
 		{/each}
 	</div>
 </div>
